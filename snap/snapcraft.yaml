@@ -14,9 +14,8 @@ apps:
 
 parts:
   py:
+    source: https://github.com/reorx/httpstat.git
     plugin: dump
-    source: https://github.com/reorx/httpstat
-    source-type: git
     organize:
       '*': py/
 
