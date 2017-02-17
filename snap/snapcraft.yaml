@@ -1,0 +1,26 @@
+name: httpstat 
+version: '0.1' 
+summary: This is a simple example making use of the python3 in the core
+description: |
+  This is a httpstat utility to show the network status
+
+grade: stable 
+confinement: strict
+
+apps:
+  httpstat:
+    command: python3 $SNAP/py/httpstat.py
+    plugs: [network]
+
+parts:
+  py:
+    plugin: dump
+    source: https://github.com/reorx/httpstat
+    source-type: git
+    organize:
+      '*': py/
+
+  curl:
+    plugin: nil
+    stage-packages: [curl]
+ 
